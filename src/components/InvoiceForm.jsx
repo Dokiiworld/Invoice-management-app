@@ -51,7 +51,7 @@ function InvoiceForm({ onClose }) {
         }));
       };
 
-      const [items, setItems] = useState([
+      const [items, setItems] = useState(() => [
         {
           id: Date.now(),
           name: "",
@@ -86,13 +86,7 @@ function InvoiceForm({ onClose }) {
         setItems(prev => prev.filter(item => item.id !== id));
       };
 
-      const clearError = (key) => {
-        setErrors(prev => {
-          const updated = { ...prev };
-          delete updated[key];
-          return updated;
-        });
-      };
+
 
       const [errors, setErrors] = useState({});
 
@@ -236,7 +230,7 @@ function InvoiceForm({ onClose }) {
         // return Object.keys(newErrors).length === 0;
         // };
 
-      const { invoices, setInvoices } = useContext(InvoiceContext);
+      const { setInvoices } = useContext(InvoiceContext);
       const handleSaveInvoice = (status) => {
         if (!validateForm(status)) return; 
         // build items with total
@@ -288,6 +282,7 @@ function InvoiceForm({ onClose }) {
           formData.paymentTerms
         );
       
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setFormData(prev => ({
           ...prev,
           paymentDue: due
