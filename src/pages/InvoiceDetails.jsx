@@ -57,15 +57,15 @@ function InvoiceDetails() {
   return (
     <div className="container">
       <div className="head-section">
-        <img src="../src/assets/rectangleCopy.png" width="100%" height="70px"/>
-        <img src="../src/assets/combineShape.png" className="logo"/>
+        <img src="/assets/rectangleCopy.png" width="100%" height="70px"/>
+        <img src="/assets/combineShape.png" className="logo"/>
         <div className="bottomDiv">
           <div>
-            <img src="../src/assets/path.png" width="10px" />
+            <img src="/assets/path.png" width="10px" />
           </div>
           <hr/>
           <div>
-            <img src="../src/assets/oval.png" width="25px" />
+            <img src="/assets/oval.png" width="25px" />
           </div>
         </div>
                 
